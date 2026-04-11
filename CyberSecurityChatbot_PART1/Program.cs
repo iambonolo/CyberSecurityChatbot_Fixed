@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Media;
 
 namespace CyberSecurityChatbot
 {//start of namespace
@@ -13,8 +14,9 @@ namespace CyberSecurityChatbot
             //create and display ASCII logo at the top of the program
             Logo logo = new Logo();
 
-            //play voice greeting when the program starts
-            VoiceGreeting voice = new VoiceGreeting();
+            // Play voice greeting when the program starts
+            SoundPlayer player = new SoundPlayer("greet.wav");
+            player.PlaySync();   // Plays and waits until finished
 
             //display welcome message
             Console.ForegroundColor = ConsoleColor.Cyan;
