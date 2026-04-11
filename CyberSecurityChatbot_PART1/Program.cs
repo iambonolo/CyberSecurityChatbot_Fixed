@@ -98,8 +98,8 @@ namespace CyberSecurityChatbot
                 //default response if the chatbot does not understand the question
                 else
                 {
-                    Console.WriteLine("\nI'm not completely sure about that topic.");
-                    Console.WriteLine("However, always stay cautious and think carefully before sharing personal information online.");
+                    Console.WriteLine("\nI didn't quite understand that. Could you rephrase?");
+                    Console.WriteLine("Try asking about password, phishing, or safe browsing.");
                 }
 
             }//end of loop
