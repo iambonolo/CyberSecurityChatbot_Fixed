@@ -42,7 +42,7 @@ namespace CyberSecurityChatbot
                 // Check if user entered nothing
                 if (string.IsNullOrWhiteSpace(userInput))
                 {
-                    Console.WriteLine("Please enter something so I can help you.");
+                    Console.WriteLine("I didn't quite understand that. Could you rephrase?s.");
                     continue; // go back to the start of the loop
                 }
 
