@@ -13,6 +13,7 @@ namespace CyberSecurityChatbot
 
             //create and display ASCII logo at the top of the program
             Logo logo = new Logo();
+            logo.Display();
 
             // Play voice greeting when the program starts
             SoundPlayer player = new SoundPlayer("greet.wav");
