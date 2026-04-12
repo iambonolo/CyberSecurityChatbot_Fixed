@@ -110,7 +110,7 @@ Every time code is pushed to the repository, the workflow automatically:
 
 \### CI Workflow Green Checkmark Screenshot
 
-!!\[CI Workflow Success](https://github.com/iambonolo/CyberSecurityChatbot\_Fixed/raw/master/ci-screenshot.png)
+!\[CI Workflow Success](https://github.com/iambonolo/CyberSecurityChatbot\_Fixed/raw/master/ci-screenshot.png)
 
 
 
