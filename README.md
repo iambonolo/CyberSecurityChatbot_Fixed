@@ -127,5 +127,18 @@ Pieterse, H. 2021. The Cyber Threat Landscape in South Africa: A 10-Year Review.
 The African Journal of Information and Communication, 28(28).
 
 Available at: https://www.scielo.org.za/scielo.php?pid=S2077-72132021000200003\&script=sci\_arttext
+## Part 2 — GUI Chatbot
+Windows Forms GUI application with the following features:
+- Modern purple themed interface
+- Voice greeting on startup
+- Keyword recognition for 6 cybersecurity topics
+- Random responses that never repeat
+- Sentiment detection for 6 emotions
+- Memory and recall of user preferences
+- Conversation flow with follow up questions
+- Error handling for unknown inputs
+
+## Part 2 Video Presentation
+YouTube Link: [add your link here after recording]
 
 
