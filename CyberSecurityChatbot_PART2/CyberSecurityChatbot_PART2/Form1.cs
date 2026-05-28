@@ -263,7 +263,6 @@ namespace CyberSecurityChatbot_PART2
 
             //------------------------------------
             // RICHTEXTBOX CHAT DISPLAY
-            // Clean scrollable chat area
             //------------------------------------
             RichTextBox chatBox = new RichTextBox();
             chatBox.Name = "chatBox";
@@ -350,7 +349,6 @@ namespace CyberSecurityChatbot_PART2
 
         //========================================
         // METHOD — PlayVoiceGreeting
-        // Plays greet.wav audio file on startup
         //========================================
         private void PlayVoiceGreeting()
         {//start of PlayVoiceGreeting method
@@ -371,7 +369,6 @@ namespace CyberSecurityChatbot_PART2
 
         //========================================
         // METHOD — DisplayWelcomeMessage
-        // Shows welcome messages on startup
         //========================================
         private void DisplayWelcomeMessage()
         {//start of DisplayWelcomeMessage method
@@ -384,8 +381,7 @@ namespace CyberSecurityChatbot_PART2
 
         //========================================
         // METHOD — AppendBotMessage
-        // Adds a bot message to the chat box
-        // Bot messages shown in purple colour
+        // Adds bot message to chat in purple
         //========================================
         private void AppendBotMessage(string message)
         {//start of AppendBotMessage method
@@ -399,17 +395,12 @@ namespace CyberSecurityChatbot_PART2
             {//start of if chatBox found
                 chatBox.SelectionStart = chatBox.TextLength;
                 chatBox.SelectionLength = 0;
-
-                // Bot label in purple bold
                 chatBox.SelectionColor = purpleDark;
                 chatBox.SelectionFont = new Font("Segoe UI", 9, FontStyle.Bold);
                 chatBox.AppendText("  🔒 Bot\n");
-
-                // Message in dark grey
                 chatBox.SelectionColor = Color.FromArgb(40, 40, 40);
                 chatBox.SelectionFont = new Font("Segoe UI", 10);
                 chatBox.AppendText($"  {message}\n\n");
-
                 chatBox.ScrollToCaret();
             }//end of if chatBox found
 
@@ -417,8 +408,7 @@ namespace CyberSecurityChatbot_PART2
 
         //========================================
         // METHOD — AppendUserMessage
-        // Adds a user message to the chat box
-        // User messages shown in purple colour
+        // Adds user message to chat in purple
         //========================================
         private void AppendUserMessage(string message)
         {//start of AppendUserMessage method
@@ -432,17 +422,12 @@ namespace CyberSecurityChatbot_PART2
             {//start of if chatBox found
                 chatBox.SelectionStart = chatBox.TextLength;
                 chatBox.SelectionLength = 0;
-
-                // You label in light purple bold
                 chatBox.SelectionColor = purpleLight;
                 chatBox.SelectionFont = new Font("Segoe UI", 9, FontStyle.Bold);
                 chatBox.AppendText("  👤 You\n");
-
-                // Message in purple
                 chatBox.SelectionColor = purpleDark;
                 chatBox.SelectionFont = new Font("Segoe UI", 10);
                 chatBox.AppendText($"  {message}\n\n");
-
                 chatBox.ScrollToCaret();
             }//end of if chatBox found
 
@@ -458,7 +443,6 @@ namespace CyberSecurityChatbot_PART2
 
         //========================================
         // EVENT — ClearButton_Click
-        // Clears chat and resets all memory
         //========================================
         private void ClearButton_Click(object sender, EventArgs e)
         {//start of ClearButton_Click event
@@ -471,14 +455,10 @@ namespace CyberSecurityChatbot_PART2
             if (chatBox != null)
             {//start of if chatBox found
                 chatBox.Clear();
-
-                // Reset all memory
                 userName = "";
                 favouriteTopic = "";
                 lastTopic = "";
                 lastResponseIndex.Clear();
-
-                // Show welcome again
                 DisplayWelcomeMessage();
             }//end of if chatBox found
 
@@ -486,7 +466,6 @@ namespace CyberSecurityChatbot_PART2
 
         //========================================
         // EVENT — InputBox_KeyPress
-        // Sends message when Enter key pressed
         //========================================
         private void InputBox_KeyPress(object sender, KeyPressEventArgs e)
         {//start of InputBox_KeyPress event
@@ -501,8 +480,7 @@ namespace CyberSecurityChatbot_PART2
 
         //========================================
         // METHOD — ProcessInput
-        // Validates input and generates response
-        // Uses delegate to call GenerateResponse
+        // Validates input and uses delegate
         //========================================
         private void ProcessInput()
         {//start of ProcessInput method
@@ -516,14 +494,13 @@ namespace CyberSecurityChatbot_PART2
 
             string userInput = inputBox.Text.Trim();
 
-            // Input validation — check for empty input
+            // Input validation
             if (string.IsNullOrEmpty(userInput))
-            {//start of if empty input
+            {//start of if empty
                 AppendBotMessage("Please type something so I can help you! 😊");
                 return;
-            }//end of if empty input
+            }//end of if empty
 
-            // Show user message
             AppendUserMessage(userInput);
             inputBox.Clear();
 
@@ -536,24 +513,23 @@ namespace CyberSecurityChatbot_PART2
             if (!string.IsNullOrEmpty(favouriteTopic) &&
                 !string.IsNullOrEmpty(userName) &&
                 random.Next(4) == 0)
-            {//start of if memory recall
+            {//start of memory recall
                 AppendBotMessage(
                     $"💡 {userName}, as someone interested in " +
                     $"{favouriteTopic}, always stay informed " +
                     "about the latest threats!");
-            }//end of if memory recall
+            }//end of memory recall
 
         }//end of ProcessInput method
 
         //========================================
         // METHOD — GenerateResponse
-        // Main chatbot logic
-        // Called via delegate from ProcessInput
+        // Main chatbot logic via delegate
         //========================================
         private string GenerateResponse(string input)
         {//start of GenerateResponse method
 
-            // STEP 1 — Get user name first
+            // STEP 1 — Get name first
             if (string.IsNullOrEmpty(userName))
             {//start of if no name
                 userName = input;
@@ -650,8 +626,7 @@ namespace CyberSecurityChatbot_PART2
 
         //========================================
         // METHOD — GetRandomResponse
-        // Randomly picks response from dictionary
-        // Never repeats same response twice in a row
+        // Picks random response never repeating
         //========================================
         private string GetRandomResponse(string topic)
         {//start of GetRandomResponse method
@@ -661,14 +636,12 @@ namespace CyberSecurityChatbot_PART2
 
                 string[] responses = keywordResponses[topic];
 
-                // Get last index used for this topic
                 int lastIndex = -1;
                 if (lastResponseIndex.ContainsKey(topic))
                 {//start of if last index exists
                     lastIndex = lastResponseIndex[topic];
                 }//end of if last index exists
 
-                // Pick different index from last time
                 int newIndex;
                 do
                 {//start of do while loop
@@ -676,9 +649,7 @@ namespace CyberSecurityChatbot_PART2
                 }//end of do
                 while (newIndex == lastIndex && responses.Length > 1);
 
-                // Save index to avoid repeat next time
                 lastResponseIndex[topic] = newIndex;
-
                 return responses[newIndex];
 
             }//end of if topic exists
