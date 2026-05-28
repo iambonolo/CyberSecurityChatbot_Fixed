@@ -139,6 +139,6 @@ Windows Forms GUI application with the following features:
 - Error handling for unknown inputs
 
 ## Part 2 Video Presentation
-YouTube Link: [add your link here after recording]
+YouTube Link: https://youtu.be/ak-5A_s3Bqc
 
 
