@@ -149,7 +149,7 @@ Windows Forms GUI application with the following advanced features:
 - Full integration with Part 1 and Part 2 features
 
 ## Part 3 Video Presentation
-YouTube Link: [add after recording]
+YouTube Link: [YouTube Link: https://youtu.be/Muw64mnV-d4]
 
 ## How to Run Part 3
 1. Open CyberSecurityChatbot_POE.sln in Visual Studio
