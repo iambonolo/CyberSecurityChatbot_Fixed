@@ -140,5 +140,20 @@ Windows Forms GUI application with the following features:
 
 ## Part 2 Video Presentation
 YouTube Link: https://youtu.be/ak-5A_s3Bqc
+## Part 3 — POE (Portfolio of Evidence)
+Windows Forms GUI application with the following advanced features:
+- Task Assistant — Add, view, complete and delete cybersecurity tasks
+- Cybersecurity Mini Quiz — 10 questions with immediate feedback and scoring
+- NLP Simulation — Natural language processing for flexible user input
+- Activity Log — Records and displays last 10 actions with timestamps
+- Full integration with Part 1 and Part 2 features
+
+## Part 3 Video Presentation
+YouTube Link: [add after recording]
+
+## How to Run Part 3
+1. Open CyberSecurityChatbot_POE.sln in Visual Studio
+2. Press Ctrl + F5 to run
+3. Interact with the chatbot using the sidebar menu
 
 
